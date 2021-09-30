@@ -1,12 +1,12 @@
 <div class="container-full">
     <div class="grid grid-cols-12 mx-10 bg-white">
         <div class="col-span-6">
-            <img src="{{product.img}}" alt="">
+            <img [routerLink]="['/home']" src="{{product.img}}" alt="">
         </div>
         <div class="col-span-6 ml-auto">
             <div>
-                <button routerLink="login" class="btn  btn-link">ĐĂNG NHẬP</button>
-                <button class="btn btn-sm btn-primary">ĐĂNG KÝ</button>
+                <button [routerLink]="['/login']" class="btn  btn-link">ĐĂNG NHẬP</button>
+                <button [routerLink]="['/logout']" class="btn btn-sm btn-primary">ĐĂNG KÝ</button>
             </div>
         </div>
     </div>

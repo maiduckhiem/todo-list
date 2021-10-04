@@ -1,0 +1,29 @@
+<div class="mx-2 mt-3">
+    <div class="grid grid-cols-12">
+        <div class="col-span-6">
+            <button
+                class="bg-gray-600 opacity-80 rounded p-1 font-bold text-white mr-2 px-4 hover:bg-gray-700">Bảng</button>
+            <button class="bg-gray-600 opacity-80 rounded p-1 font-bold text-white mx-2 px-4 hover:bg-gray-700">Không
+                gian làm
+                việc</button>
+            <select class="bg-gray-600 opacity-80 rounded p-1 font-bold text-white mx-3 px-4 hover:bg-gray-700" name=""
+                id="">
+                <option value="">Công khai</option>
+                <option value="">Riêng tư</option>
+            </select>
+            <button
+            (click)="hovernav()" class="bg-gray-600 one opacity-80 rounded p-1 font-bold text-white mx-2 px-4 hover:bg-gray-700 absolute ">mới</button>
+            <div id="nav" class="nav bg-white absolute mt-2 w-full rounded" [ngClass]="{'none': toggle, 'block': !toggle}">
+                <h4 class="text-center pt-2 mt-2">Mời vào bảng</h4>
+                <input class="border-2 w-full rounded mt-5" type="text" name="" id="" placeholder="địa email hoặc tên">
+            </div>
+        </div>
+        <div class="col-span-6 ml-auto">
+            <button
+                class="bg-gray-600 opacity-80 rounded p-1 font-bold text-white mx-2 px-4 hover:bg-gray-700">menu</button>
+        </div>
+    </div>
+    <div class="mt-3">
+        <button class="btn btn-white opacity-80">thêm danh sách</button>
+    </div>
+</div>

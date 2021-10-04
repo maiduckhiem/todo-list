@@ -1,0 +1,19 @@
+.bg-images{
+    background-image: url(https://anhdepblog.com/wp-content/uploads/2020/10/ve-dep-ky-bi-cua-hang-dong-son-doong-9.jpg);
+    width: 100%;
+    height: 100vh;
+    background-size:100% auto;
+}
+.nav {
+    padding: 10px;
+    width: 340px;
+    margin-left: 422px;
+}
+.none{
+    display: none;
+    transition-duration: 1000ms;
+}
+.block {
+    display: block;
+    transition-duration: 1000ms;
+}

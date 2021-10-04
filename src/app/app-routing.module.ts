@@ -7,7 +7,8 @@ const routes: Routes = [
   { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
   {path:"login",component:LoginComponent},
   {path:"logout",component:LogoutComponent},
-  { path: 'layout', loadChildren: () => import('./layout/layout.module').then(m => m.LayoutModule) }
+  { path: 'layout', loadChildren: () => import('./layout/layout.module').then(m => m.LayoutModule) },
+  { path: 'table', loadChildren: () => import('./table/table.module').then(m => m.TableModule) }
 ];
 
 @NgModule({

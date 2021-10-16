@@ -2,13 +2,21 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './main/login/login.component';
 import { LogoutComponent } from './main/logout/logout.component';
+import { AddTackComponent } from './backend/add-tack/add-tack.component';
+import { EditTableComponent } from './backend/edit-table/edit-table.component';
+import { AddCategoryComponent } from './backend/add-category/add-category.component';
+import { EditCategoryComponent } from './backend/edit-category/edit-category.component';
 const routes: Routes = [
   {path:"",redirectTo:"/home",pathMatch:"full"},
-  { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
+  { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule)},
+  { path: 'layout', loadChildren: () => import('./layout/layout.module').then(m => m.LayoutModule) },
+  { path: 'table', loadChildren: () => import('./table/table.module').then(m => m.TableModule) },
+  {path:"add-category",component:AddCategoryComponent},
+  {path:"edit-category",component:EditCategoryComponent},
   {path:"login",component:LoginComponent},
   {path:"logout",component:LogoutComponent},
-  { path: 'layout', loadChildren: () => import('./layout/layout.module').then(m => m.LayoutModule) },
-  { path: 'table', loadChildren: () => import('./table/table.module').then(m => m.TableModule) }
+  {path:"add",component: AddTackComponent},
+  {path:"tack/:id/edit",component: EditTableComponent},
 ];
 
 @NgModule({

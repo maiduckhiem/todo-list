@@ -1,0 +1,8 @@
+<div class="container mx-auto">
+    <div class="mx-100 grid grid-cols-1 shadow-2xl  rounded bg-gray-600 p-10 mt-10">
+        <i [routerLink]="['/table']" class="far fa-times-circle ml-auto hover:text-red-500 cursor-pointer text-2xl"></i>
+        <h4 class="text-center uppercase text-green-500 font-bold mt-2">mời bạn chỉnh sửa</h4>
+        <input type="text" placeholder="Nhập bạn nhập" class="input input-primary input-bordered mt-5"[(ngModel)]="category.title" name="title">
+        <button  (click)="onUpdatecategory()" [routerLink]="['/table']" class="btn btn-accent mt-5">XONG</button>
+    </div>
+</div>

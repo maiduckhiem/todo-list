@@ -23,23 +23,39 @@
                 <div class="col-span-1 my-5 hover:bg-gray-300 rounded">
                     <a href="#"><i class="fas fa-plus p-2 w-4"></i></a>
                 </div>
+                <div class="col-span-12 py-2 " *ngFor="let category of categorys">
+                    <div class="bg-gray-200 py-2 w-full rounded px-2 font-bold cursor-pointer ">
+                        <h5 routerLink="/category/{{category.id}}/table">{{category.title}}</h5>
+                    </div>
+                </div>
             </div>
         </div>
         <div class=" col-span-12 md:col-span-8 mx-5 md:mx-none">
             <div class="">
                 <div class="mt-2">
-                    <h3 class="font-bold"><i class="fab fa-creative-commons-sampling-plus text-2xl pr-3"></i>Đã xem gần đây</h3>
+                    <h3 class="font-bold"><i class="fab fa-creative-commons-sampling-plus text-2xl pr-3"></i>Đã xem gần
+                        đây</h3>
                 </div>
                 <div class="">
                     <h3 class="font-bold uppercate opacity-70">CÁC KHÔNG GIAN LÀM VIỆC CỦA BẠN</h3>
+
                 </div>
-                <div class="grid grid-cols-12 mt-2">
-                    <div class="col-span-6">
-                        <div class="bg-gray-200 text-center py-8 rounded cursor-pointer" [routerLink]="['/table']">
+                <div class="grid grid-cols-12 mt-2 gap-5">
+                    <div class="col-span-4" *ngFor="let category of categorys">
+                        <div class=" w-full py-4 rounded px-2 font-bold cursor-pointer bg-one">
+                            <h5>{{category.title}}</h5>
+                            <div>
+                                <i (click)="onHandleRemove(category.id)"
+                                class="far fa-trash-alt cursor-pointer hover:text-red-500 ml-40 "></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-4">
+                        <div [routerLink]="['/add-category']"
+                            class="bg-gray-200 text-center py-4 rounded cursor-pointer hover:bg-gray-400 duration-300 hover:text-white transiton">
                             <h5>Tạo bảng mới</h5>
                         </div>
                     </div>
-                    <div class="col-span-6"></div>
                 </div>
             </div>
         </div>

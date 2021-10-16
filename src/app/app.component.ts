@@ -9,4 +9,5 @@ export class AppComponent {
   title = 'todo-list-test';
   filter: string = 'filter';
   toggle() {}
+  
 }

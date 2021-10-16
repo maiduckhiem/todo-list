@@ -1,0 +1,105 @@
+<div class="container-full bg-images">
+    <div class="navbar shadow-lg bg-black text-neutral-content opacity-70">
+        <div class="flex-none hidden lg:flex">
+            <button class="btn btn-square btn-ghost">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    class="inline-block w-6 h-6 stroke-current">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <div class="flex hidden lg:flex">
+            <span class="text-lg font-bold" [routerLink]="['/home']">
+                <img src="{{images.url1}}" alt="" >
+            </span>
+        </div>
+        <div class="flex hidden lg:flex">
+            <button class="btn btn-ghost hover:bg-gray-600">không gian làm việc </button>
+        </div>
+        <div class="flex hidden lg:flex">
+            <button class="btn btn-ghost hover:bg-gray-600">gần đây</button>
+        </div>
+        <div class="flex hidden lg:flex">
+            <button class="btn btn-ghost hover:bg-gray-600">đã đánh dấu sao</button>
+        </div>
+        <div class="flex-1 hidden lg:flex">
+            <button class="btn btn-ghost hover:bg-gray-600">tạo bảng</button>
+        </div>
+        <div class="flex-1 lg:flex-none">
+            <div class="form-control">
+                <input type="text" placeholder="Search" class="input mb-2 text-black">
+            </div>
+        </div>
+        <div class="flex-none">
+            <button class="btn btn-square btn-ghost">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    class="inline-block w-6 h-6 stroke-current">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="flex-none">
+            <button class="btn btn-square btn-ghost absolute ">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    class="inline-block w-6 h-6 stroke-current">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <div class="flex-none">
+            <div class="avatar">
+                <div class="rounded-full w-10 h-10 m-1">
+                    <img src="https://i.pravatar.cc/500?img=32">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mx-2 mt-3">
+        <div class="grid grid-cols-12">
+            <div class="col-span-6">
+                <button
+                    class="bg-gray-600 opacity-80 rounded p-1 font-bold text-white mr-2 px-4 hover:bg-gray-700">Bảng</button>
+                <button class="bg-gray-600 opacity-80 rounded p-1 font-bold text-white mx-2 px-4 hover:bg-gray-700">Không
+                    gian làm
+                    việc</button>
+                <select class="bg-gray-600 opacity-80 rounded p-1 font-bold text-white mx-3 px-4 hover:bg-gray-700" name=""
+                    id="">
+                    <option value="">Công khai</option>
+                    <option value="">Riêng tư</option>
+                </select>
+                <button (click)="hovernav()"
+                    class="bg-gray-600 one opacity-80 rounded p-1 font-bold text-white mx-2 px-4 hover:bg-gray-700 absolute ">mới</button>
+                <div id="nav" class="nav bg-white absolute mt-2 w-full rounded"
+                    [ngClass]="{'none': toggle, 'block': !toggle}">
+                    <h4 class="text-center pt-2 mt-2">Mời vào bảng</h4>
+                    <input class="border-2 w-full rounded mt-5" type="text" name="" id="" placeholder="địa email hoặc tên">
+                </div>
+            </div>
+            <div class="col-span-6 ml-auto">
+                <button
+                    class="bg-gray-600 opacity-80 rounded p-1 font-bold text-white mx-2 px-4 hover:bg-gray-700">menu</button>
+            </div>
+        </div>
+
+        <div class="container mx-auto">
+            <div class="mx-100 grid grid-cols-1 shadow-2xl  rounded bg-gray-600 p-10 mt-10">
+                <i [routerLink]="['/table']" class="far fa-times-circle ml-auto hover:text-red-500 cursor-pointer text-2xl"></i>
+                <h4 class="text-center uppercase text-green-500 font-bold mt-2">mời bạn thêm mới</h4>
+                <input id="name" type="text" placeholder="Nhập bạn nhập" class="input input-primary input-bordered mt-5"[(ngModel)]="tack.title" name="title">
+                <input type="text" placeholder="Nhập bạn nhập" class="input input-primary input-bordered mt-5"[(ngModel)]="tack.price" name="price">
+                <input type="text" placeholder="Nhập bạn nhập" class="input input-primary input-bordered mt-5"[(ngModel)]="tack.desc" name="desc">
+                <input type="text" placeholder="Nhập bạn nhập" class="input input-primary input-bordered mt-5"[(ngModel)]="tack.author " name="author ">
+                <textarea class="mt-2 rounded h-32" name="content" id="" cols="30" rows="10" [(ngModel)]="tack.content"></textarea>
+                <button  (click)=" onAddTack()" [routerLink]="['/table']" class="btn btn-accent mt-5">XONG</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script>
+    
+</script>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from 'src/app/category.service';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
@@ -7,10 +8,21 @@ import { CategoryService } from 'src/app/category.service';
 })
 export class ContentComponent implements OnInit {
   categorys: any[]
-  constructor(private categoryService: CategoryService,){}
+  constructor(private categoryService: CategoryService,
+    private activatedRoute: ActivatedRoute
+    ){}
 
   ngOnInit() {
     this.getcategory();
+    this.getInfo();
+  }
+  
+  getInfo() {
+    this.activatedRoute.params.subscribe(params => {
+      this.categoryService.get(params.id).subscribe(data => {
+        this.categorys = data;
+      });
+    });
   }
   getcategory(){
     this.categoryService.getCategorys().subscribe(data => {

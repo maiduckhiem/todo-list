@@ -50,6 +50,7 @@
                         <div class=" w-full py-4 rounded px-2 font-bold cursor-pointer bg-one">
                             <h5 routerLink="/table/{{category._id}}">{{category.title}}</h5>
                             <div>
+                                <i routerLink="/edit/{{category._id}}" class="far fa-edit cursor-pointer hover:text-red-500"></i>
                                 <i (click)="onHandleRemove(category._id)"
                                 class="far fa-trash-alt cursor-pointer hover:text-red-500 ml-40 "></i>
                             </div>

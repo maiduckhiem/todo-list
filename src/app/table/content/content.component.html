@@ -41,7 +41,7 @@
                     <h4 class="bg-gray-100 my-2 rounded p-2 px-2">{{task.status}}</h4>
                     <div class="grid grid-cols-2 text-center mt-5">
                         <div>
-                            <i routerLink="/table/{{task._id}}/edit" class="far fa-edit cursor-pointer hover:text-red-500"></i>
+                            <i routerLink="/task/{{task._id}}" class="far fa-edit cursor-pointer hover:text-red-500"></i>
                         </div>
                         <div>
                             <i (click)="onHandleRemove(task._id)" class="far fa-trash-alt cursor-pointer hover:text-red-500"></i>

@@ -6,14 +6,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TackService {
-  API: string = 'https://api-angular-1.herokuapp.com/api/task?categoryId';
+  API: string = 'https://api-angular-1.herokuapp.com/api/task';
 
   constructor(private http: HttpClient) {}
-  getTask(): Observable<any> {
-    return this.http.get<any>(this.API);
-  }
+  // getTask(): Observable<any> {
+  //   return this.http.get<any>(this.API);
+  // }
   getTasks(id: any): Observable<any> {
-    return this.http.get<any>(`${this.API}=${id}`);
+    return this.http.get<any>(`${this.API}?categoryId=${id}`);
   }
   addTasks(item: any): Observable<any> {
     return this.http.post<any>(this.API, item);

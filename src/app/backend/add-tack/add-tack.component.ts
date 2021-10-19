@@ -41,11 +41,9 @@ export class AddTackComponent implements OnInit {
   ngOnInit(): void {
   }
   onAddTack() {
-    
     this.tackService.addTasks(this.tasks).subscribe(data => {
       console.log(data);
       this.router.navigateByUrl('/tasks')
-      
     })
   }
 }

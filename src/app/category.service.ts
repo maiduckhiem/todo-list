@@ -21,8 +21,8 @@ import { Observable } from 'rxjs';
     removeCategory(id: number): Observable<any> {
       return this.http.delete<any>(`${this.API}/${id}`);
     }
-    updateCategory(item: any): Observable<any> {
-      return this.http.put<any>(`${this.API}/${item.id}`, item)
+    updateCategory(data: any): Observable<any> {
+      return this.http.put<any>(`${this.API}/${data._id}`, data)
     }
   }
   

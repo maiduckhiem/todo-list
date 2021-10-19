@@ -36,9 +36,10 @@ export class EditCategoryComponent implements OnInit {
       });
     }
     onUpdatecategory() {
-      this.categoryService.updateCategory(this.category).subscribe(data => {
-        this.router.navigateByUrl("/category")
-      });
+        this.categoryService.updateCategory(this.category).subscribe(data => {
+          this.router.navigateByUrl("/layout")
+        });
+      console.log(this.category)
     }
 
 }

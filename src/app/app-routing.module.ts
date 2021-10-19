@@ -14,11 +14,11 @@ const routes: Routes = [
   { path: 'table/:id', loadChildren: () => import('./table/table.module').then(m => m.TableModule) },
   {path:"table",component:ContentComponent},
   {path:"add-category",component:AddCategoryComponent},
-  {path:"edit-category",component:EditCategoryComponent},
+  {path:"edit/:id",component:EditCategoryComponent},
   {path:"login",component:LoginComponent},
   {path:"logout",component:LogoutComponent},
   {path:"add",component: AddTackComponent},
-  {path:"tasks/:id/edit",component: EditTableComponent},
+  {path:"task/:id",component: EditTableComponent},
 ];
 
 @NgModule({

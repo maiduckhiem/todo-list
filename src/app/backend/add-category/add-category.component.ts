@@ -32,7 +32,7 @@ export class AddCategoryComponent implements OnInit {
   onAddCategory() {
     this.categoryService.addCategory(this.category).subscribe(data => {
       console.log(data);
-      this.router.navigateByUrl('/category')
+      this.router.navigateByUrl('/layout')
     })
   }
 

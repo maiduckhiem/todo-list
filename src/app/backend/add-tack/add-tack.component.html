@@ -1,5 +1,5 @@
 <div class="container-full bg-images">
-    <div class="navbar shadow-lg bg-black text-neutral-content opacity-70">
+    <div class="navbar shadow-lg bg-black text-neutral-content opacity-70 sticky top-0">
         <div class="flex-none hidden lg:flex">
             <button class="btn btn-square btn-ghost">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -11,7 +11,7 @@
         </div>
         <div class="flex hidden lg:flex">
             <span class="text-lg font-bold" [routerLink]="['/home']">
-                <img src="{{images.url1}}" alt="" >
+                <img src="{{images.url1}}" alt="">
             </span>
         </div>
         <div class="flex hidden lg:flex">
@@ -58,16 +58,18 @@
             </div>
         </div>
     </div>
+
     <div class="mx-2 mt-3">
         <div class="grid grid-cols-12">
             <div class="col-span-6">
                 <button
                     class="bg-gray-600 opacity-80 rounded p-1 font-bold text-white mr-2 px-4 hover:bg-gray-700">Bảng</button>
-                <button class="bg-gray-600 opacity-80 rounded p-1 font-bold text-white mx-2 px-4 hover:bg-gray-700">Không
+                <button
+                    class="bg-gray-600 opacity-80 rounded p-1 font-bold text-white mx-2 px-4 hover:bg-gray-700">Không
                     gian làm
                     việc</button>
-                <select class="bg-gray-600 opacity-80 rounded p-1 font-bold text-white mx-3 px-4 hover:bg-gray-700" name=""
-                    id="">
+                <select class="bg-gray-600 opacity-80 rounded p-1 font-bold text-white mx-3 px-4 hover:bg-gray-700"
+                    name="" id="">
                     <option value="">Công khai</option>
                     <option value="">Riêng tư</option>
                 </select>
@@ -76,7 +78,8 @@
                 <div id="nav" class="nav bg-white absolute mt-2 w-full rounded"
                     [ngClass]="{'none': toggle, 'block': !toggle}">
                     <h4 class="text-center pt-2 mt-2">Mời vào bảng</h4>
-                    <input class="border-2 w-full rounded mt-5" type="text" name="" id="" placeholder="địa email hoặc tên">
+                    <input class="border-2 w-full rounded mt-5" type="text" name="" id=""
+                        placeholder="địa email hoặc tên">
                 </div>
             </div>
             <div class="col-span-6 ml-auto">
@@ -85,21 +88,30 @@
             </div>
         </div>
 
-        <div class="container mx-auto">
-            <div class="mx-100 grid grid-cols-1 shadow-2xl  rounded bg-gray-600 p-10 mt-10">
-                <i [routerLink]="['/table']" class="far fa-times-circle ml-auto hover:text-red-500 cursor-pointer text-2xl"></i>
-                <h4 class="text-center uppercase text-green-500 font-bold mt-2">mời bạn thêm mới</h4>
-                <input id="name" type="text" placeholder="Nhập bạn nhập" class="input input-primary input-bordered mt-5"[(ngModel)]="tack.title" name="title">
-                <input type="text" placeholder="Nhập bạn nhập" class="input input-primary input-bordered mt-5"[(ngModel)]="tack.price" name="price">
-                <input type="text" placeholder="Nhập bạn nhập" class="input input-primary input-bordered mt-5"[(ngModel)]="tack.desc" name="desc">
-                <input type="text" placeholder="Nhập bạn nhập" class="input input-primary input-bordered mt-5"[(ngModel)]="tack.author " name="author ">
-                <textarea class="mt-2 rounded h-32" name="content" id="" cols="30" rows="10" [(ngModel)]="tack.content"></textarea>
-                <button  (click)=" onAddTack()" [routerLink]="['/table']" class="btn btn-accent mt-5">XONG</button>
-            </div>
+        <div class="container mx-auto" >
+                <div class="mx-100 grid grid-cols-1 shadow-2xl  rounded bg-gray-600 p-10 mt-5" > 
+                    <i [routerLink]="['/table/{{category.id}}']"
+                        class="far fa-times-circle ml-auto hover:text-red-500 cursor-pointer text-2xl"></i>
+                    <h4 class="text-center uppercase text-green-500 font-bold mt-2">mời bạn thêm mới</h4>
+                    <input id="name" type="text" placeholder="Nhập bạn nhập TIỀU ĐỀ"
+                        class="input input-primary input-bordered mt-5" [(ngModel)]="tasks.title" name="title" FormControlName="name">
+                    <input type="text" placeholder="Nhập bạn nhập" class="input input-primary input-bordered mt-5"
+                        [(ngModel)]="tasks.name" name="name">
+                    <p class="text-red-500 mt-2">deadline :</p>
+                    <input type="date" placeholder="Nhập bạn nhập" class="input input-primary input-bordered mt-5"
+                        [(ngModel)]="tasks.deadline" name="deadline">
+                    <textarea class="mt-2 rounded h-32" name="content" id="" cols="30" rows="10"
+                        [(ngModel)]="tasks.content"></textarea>
+                    <select class="bg-gray-600 mt-2 opacity-80 rounded p-1 font-bold text-white px-4 hover:bg-gray-700"
+                        name="status" [(ngModel)]="tasks.status" id="">
+                        <option value="đã hoàn thành">đã hoàn thành</option>
+                        <option value="chưa hoàn thành">chưa hoàn thành</option>
+                        <option value="mới">mới</option>
+                    </select>
+                    <button type="submit" (click)=" onAddTack()" [routerLink]="['/table/{{category.id}}']"
+                        class="btn btn-accent mt-5">XONG</button>
+                </div>
         </div>
     </div>
 
 </div>
-<script>
-    
-</script>

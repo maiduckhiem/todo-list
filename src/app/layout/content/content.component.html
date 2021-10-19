@@ -21,12 +21,17 @@
                     <h3 class="mt-5 font-bold opacity-50">CÁC KHÔNG GIAN LÀM VIỆC</h3>
                 </div>
                 <div class="col-span-1 my-5 hover:bg-gray-300 rounded">
-                    <a href="#"><i class="fas fa-plus p-2 w-4"></i></a>
+                    <p (click)="hovernav()"><i class="fas fa-plus p-2 w-4 cursor-pointer"></i></p>
                 </div>
-                <div class="col-span-12 py-2 " *ngFor="let category of categorys">
-                    <div class="bg-gray-200 py-2 w-full rounded px-2 font-bold cursor-pointer ">
-                        <h5 routerLink="/category/{{category.id}}/table">{{category.title}}</h5>
-                    </div>
+                <div [ngClass]="{'block': !toggle, 'none': toggle}" class="col-span-12 block">
+                    <ul class="">
+                        <li class="bg-gray-300 p-1 px-2 hover:bg-gray-200 cursor-pointer rounded my-2"><i class="fab fa-angrycreative mr-5 py-2"></i>bắt đầu</li>
+                        <li class="bg-gray-300 p-1 px-2 hover:bg-gray-200 cursor-pointer rounded my-2"><i class="fab fa-apple-pay mr-5 py-2"></i>bảng</li>
+                        <li class="bg-gray-300 p-1 px-2 hover:bg-gray-200 cursor-pointer rounded my-2"><i class="fab fa-apple-pay mr-5 py-2"></i>điểm nổi bật</li>
+                        <li class="bg-gray-300 p-1 px-2 hover:bg-gray-200 cursor-pointer rounded my-2"><i class="fab fa-apple-pay mr-5 py-2"></i>bảng không gian làm việc</li>
+                        <li class="bg-gray-300 p-1 px-2 hover:bg-gray-200 cursor-pointer rounded my-2"><i class="fab fa-apple-pay mr-5 py-2"></i>thành viên</li>
+                        <li class="bg-gray-300 p-1 px-2 hover:bg-gray-200 cursor-pointer rounded my-2"><i class="fab fa-apple-pay mr-5 py-2"></i>cài đặt</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -43,9 +48,9 @@
                 <div class="grid grid-cols-12 mt-2 gap-5">
                     <div class="col-span-4" *ngFor="let category of categorys">
                         <div class=" w-full py-4 rounded px-2 font-bold cursor-pointer bg-one">
-                            <h5>{{category.title}}</h5>
+                            <h5 routerLink="/table/{{category._id}}">{{category.title}}</h5>
                             <div>
-                                <i (click)="onHandleRemove(category.id)"
+                                <i (click)="onHandleRemove(category._id)"
                                 class="far fa-trash-alt cursor-pointer hover:text-red-500 ml-40 "></i>
                             </div>
                         </div>

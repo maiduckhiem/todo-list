@@ -87,14 +87,20 @@
 
         <div class="container mx-auto">
             <div class="mx-100 grid grid-cols-1 shadow-2xl  rounded bg-gray-600 p-10 mt-10">
-                <i [routerLink]="['/table']" class="far fa-times-circle ml-auto hover:text-red-500 cursor-pointer text-2xl"></i>
+                <i [routerLink]="['/table/{{category.id}}']" class="far fa-times-circle ml-auto hover:text-red-500 cursor-pointer text-2xl"></i>
                 <h4 class="text-center uppercase text-green-500 font-bold mt-2">mời bạn chỉnh sửa</h4>
                 <input type="text" placeholder="Nhập bạn nhập" class="input input-primary input-bordered mt-5"[(ngModel)]="tack.title" name="title">
                 <input type="text" placeholder="Nhập bạn nhập" class="input input-primary input-bordered mt-5"[(ngModel)]="tack.price" name="price">
-                <input type="text" placeholder="Nhập bạn nhập" class="input input-primary input-bordered mt-5"[(ngModel)]="tack.desc" name="desc">
-                <input type="text" placeholder="Nhập bạn nhập" class="input input-primary input-bordered mt-5"[(ngModel)]="tack.author " name="author ">
+                <p class="text-red-500 mt-2">deadline :</p>
+                <input type="date" placeholder="Nhập bạn nhập" class="input input-primary input-bordered mt-5"[(ngModel)]="tack.date" name="date ">
                 <textarea class="mt-2 rounded h-32" name="content" id="" cols="30" rows="10" [(ngModel)]="tack.content"></textarea>
-                <button  (click)="onUpdatetack()" [routerLink]="['/table']" class="btn btn-accent mt-5">XONG</button>
+                <select class="bg-gray-600 mt-2 opacity-80 rounded p-1 font-bold text-white px-4 hover:bg-gray-700" name="status" [(ngModel)]="tack.status"
+                id="">
+                <option value="đã hoàn thành">đã hoàn thành</option>
+                <option value="chưa hoàn thành">chưa hoàn thành</option>
+                <option value="mới">mới</option>
+            </select>
+                <button  (click)="onUpdatetack()" [routerLink]="['/table/{{category.id}}']" class="btn btn-accent mt-5">XONG</button>
             </div>
         </div>
     </div>

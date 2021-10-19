@@ -6,22 +6,22 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TackService {
-  API: string = 'http://localhost:3000/tack';
+  API: string = 'https://api-angular-1.herokuapp.com/api/task?categoryId';
 
   constructor(private http: HttpClient) {}
-  getTacks(): Observable<any> {
+  getTask(): Observable<any> {
     return this.http.get<any>(this.API);
   }
-  get(id: any): Observable<any> {
-    return this.http.get<any>(`${this.API}/${id}`);
+  getTasks(id: any): Observable<any> {
+    return this.http.get<any>(`${this.API}=${id}`);
   }
-  addTack(item: any): Observable<any> {
+  addTasks(item: any): Observable<any> {
     return this.http.post<any>(this.API, item);
   }
-  removeTack(id: number): Observable<any> {
+  removeTasks(id: number): Observable<any> {
     return this.http.delete<any>(`${this.API}/${id}`);
   }
-  updateTack(item: any): Observable<any> {
+  updateTasks(item: any): Observable<any> {
     return this.http.put<any>(`${this.API}/${item.id}`, item)
   }
 }

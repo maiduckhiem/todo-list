@@ -7,3 +7,12 @@
     height: 100%;
     background-size:100% auto;
 }
+.block {
+    display: block;
+    transition-duration: 1000ms;
+    transform: rotate(2s);
+}
+.none{
+    display: none;
+    transition-duration: 1000ms;
+}

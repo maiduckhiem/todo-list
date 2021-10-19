@@ -1,42 +1,23 @@
 {
   "tack": [
     {
-      "id": 7,
-      "title": "dsfadf",
-      "price": "288ewrwer",
-      "desc": "asd",
-      "author": "12312",
-      "content": "ewrwer  erwe r  wer ưer"
-    },
-    {
-      "id": 8,
-      "title": "cong viec ngay mai la cai ban co the lam gi voi toi khong",
-      "price": "casdkkkdsjfkjasd",
-      "desc": "dfadfasdf  adf ",
-      "author": "12312",
-      "content": "312  313  13 "
-    },
-    {
-      "id": 9,
-      "title": "ngay moi",
-      "price": "jdhjhad",
-      "desc": "fadf",
-      "author": "df",
-      "content": " djfj fjadf "
+      "id": 1,
+      "title": "qweqw",
+      "name": "weqw",
+      "content": "eqwe",
+      "categoryid": "",
+      "deadline": "2021-09-27",
+      "status": "chưa hoàn thành"
     }
   ],
   "category": [
     {
+      "id": 1,
+      "title": "3123"
+    },
+    {
       "id": 2,
-      "title": "fdcadfsd"
-    },
-    {
-      "id": 3,
-      "title": "dfadfadfadfad"
-    },
-    {
-      "id": 4,
-      "title": "ddasdasd"
+      "title": "2"
     }
   ]
 }

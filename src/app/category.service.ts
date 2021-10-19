@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
     providedIn: 'root'
   })
   export class CategoryService {
-    API: string = 'http://localhost:3000/category';
+    API: string = 'https://api-angular-1.herokuapp.com/api/category';
   
     constructor(private http: HttpClient) {}
     getCategorys(): Observable<any> {
